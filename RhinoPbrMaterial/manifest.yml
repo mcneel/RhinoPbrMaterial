@@ -1,0 +1,9 @@
+---
+name: rhinopbrmaterial
+version: 1.0.0
+authors:
+- Nathan 'jesterKing' Letwory
+description: RhinoPbrMaterial - reference PBR material implementation.
+url: http://github.com/mcneel/RhinoPbrMaterial
+secret:
+  id: adeb6492-9e4c-4a21-9f46-eccbb6dc1ee4
