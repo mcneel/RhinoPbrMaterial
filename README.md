@@ -13,4 +13,4 @@ to create PBR materials should use these.
 The reference material plug-in can be installed using `_TestPackageManager`.
 The name of the packages is `rhinopbrmaterial`.
 
-Note that Rhino 6.13 or newer is needed.
+Note that Rhino 6.12 or newer is needed.
