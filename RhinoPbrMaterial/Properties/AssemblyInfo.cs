@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Rhino.PlugIns;
 
@@ -38,19 +37,9 @@ using Rhino.PlugIns;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("adeb6492-9e4c-4a21-9f46-eccbb6dc1ee4")] // This will also be the Guid of the Rhino plug-in
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
 // Make compatible with Rhino Installer Engine
 [assembly: AssemblyInformationalVersion("2")]
 
-[assembly: AssemblyVersion("1.0.1")]
-[assembly: AssemblyFileVersion("1.0.1")]
+[assembly: AssemblyVersion("1.1.0")]
+[assembly: AssemblyFileVersion("1.1.0")]
 
