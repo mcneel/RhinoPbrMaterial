@@ -49,9 +49,7 @@ namespace RaytracedMaterials
 			TexturedSlot(this, Pbr.AmbientOcclusion, 0.0f, "AmbientOcclusion");
 			TexturedSlot(this, Pbr.Smudge, 0.0f, "Smudge");
 			
-			TexturedSlot(this, Pbr.Normal, Color4f.Black, "Normal");
 			TexturedSlot(this, Pbr.Bump, Color4f.Black, "Bump");
-			TexturedSlot(this, Pbr.Displacement, Color4f.Black, "Displacement");
 
 			ModifyRenderContentStyles(RenderContentStyles.None, RenderContentStyles.TextureSummary);
 		}
@@ -80,9 +78,7 @@ namespace RaytracedMaterials
 		public TexturedColor Emission = new TexturedColor(Pbr.Emission, Color4f.Black, false, 1.0f);
 		public TexturedFloat AmbientOcclusion = new TexturedFloat(Pbr.AmbientOcclusion, 0.0f, false, 1.0f);
 		public TexturedFloat Smudge = new TexturedFloat(Pbr.Smudge, 0.0f, false, 1.0f);
-		public TexturedColor Normal = new TexturedColor(Pbr.Normal, Color4f.Black, false, 1.0f);
 		public TexturedColor Bump = new TexturedColor(Pbr.Bump, Color4f.Black, false, 1.0f);
-		public TexturedColor Displacement = new TexturedColor(Pbr.Displacement, Color4f.Black, false, 1.0f);
 
 		protected override void OnAddUserInterfaceSections()
 		{
@@ -122,9 +118,9 @@ namespace RaytracedMaterials
 			boolrc = HandleTexturedValue(Pbr.OpacityIor, Ior);
 			simulatedMaterial.IndexOfRefraction = Ior.Value;
 
-			boolrc = HandleTexturedValue(Pbr.Normal, Normal);
-			if(Normal.On && Normal.Texture != null) {
-				SimulatedTexture simtex = Normal.Texture.SimulatedTexture(RenderTexture.TextureGeneration.Allow);
+			boolrc = HandleTexturedValue(Pbr.Bump, Bump);
+			if(Bump.On && Bump.Texture != null) {
+				SimulatedTexture simtex = Bump.Texture.SimulatedTexture(RenderTexture.TextureGeneration.Allow);
 				simulatedMaterial.SetBumpTexture(simtex.Texture());
 
 			}
