@@ -41,9 +41,9 @@ namespace RaytracedMaterials
 			TexturedSlot(this, Pbr.Clearcoat, 0.0f, "Clearcoat");
 			TexturedSlot(this, Pbr.ClearcoatRoughness, 0.0f, "Clearcoat Roughness");
 			
-			TexturedSlot(this, Pbr.OpacityIor, 1.45f, "IOR");
-			TexturedSlot(this, Pbr.Opacity, 0.0f, "Transmission");
-			TexturedSlot(this, Pbr.OpacityRoughness, 0.0f, "Transmission Roughness");
+			TexturedSlot(this, Pbr.OpacityIor, 1.45f, "Opacity IOR");
+			TexturedSlot(this, Pbr.Opacity, 0.0f, "Opacity");
+			TexturedSlot(this, Pbr.OpacityRoughness, 0.0f, "Opacity Roughness");
 			
 			TexturedSlot(this, Pbr.Emission, Color4f.Black, "Emission");
 			TexturedSlot(this, Pbr.AmbientOcclusion, 0.0f, "AmbientOcclusion");
@@ -108,7 +108,7 @@ namespace RaytracedMaterials
 			simulatedMaterial.ReflectionGlossiness = 1.0f - Roughness.Value;
 
 			boolrc = HandleTexturedValue(Pbr.Opacity, Transmission);
-			simulatedMaterial.Transparency = Transmission.Value;
+			simulatedMaterial.Transparency = 1.0f - Transmission.Value;
 			if(Transmission.Value > 0.5f) {
 				simulatedMaterial.TransparentColor = Base.Value.AsSystemColor();
 			}
