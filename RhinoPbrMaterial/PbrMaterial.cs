@@ -27,10 +27,10 @@ namespace RaytracedMaterials
 
 			TexturedSlot(this, Pbr.Metallic, 0.0f, "Metallic");
 
-			TexturedSlot(this, Pbr.Specular, 0.0f, "Specular");
+			TexturedSlot(this, Pbr.Specular, 0.2f, "Specular");
 			TexturedSlot(this, Pbr.SpecularTint, 0.0f, "Specular Tint");
 			
-			TexturedSlot(this, Pbr.Roughness, 0.0f, "Roughness");
+			TexturedSlot(this, Pbr.Roughness, 0.1f, "Roughness");
 			
 			TexturedSlot(this, Pbr.Anisotropic, 0.0f, "Anisotropic");
 			TexturedSlot(this, Pbr.AnisotropicRotation, 0.0f, "Anisotropic Rotation");
@@ -42,12 +42,11 @@ namespace RaytracedMaterials
 			TexturedSlot(this, Pbr.ClearcoatRoughness, 0.0f, "Clearcoat Roughness");
 			
 			TexturedSlot(this, Pbr.OpacityIor, 1.45f, "Opacity IOR");
-			TexturedSlot(this, Pbr.Opacity, 0.0f, "Opacity");
+			TexturedSlot(this, Pbr.Opacity, 1.0f, "Opacity");
 			TexturedSlot(this, Pbr.OpacityRoughness, 0.0f, "Opacity Roughness");
 			
 			TexturedSlot(this, Pbr.Emission, Color4f.Black, "Emission");
 			TexturedSlot(this, Pbr.AmbientOcclusion, 0.0f, "AmbientOcclusion");
-			TexturedSlot(this, Pbr.Smudge, 0.0f, "Smudge");
 			
 			TexturedSlot(this, Pbr.Bump, Color4f.Black, "Bump");
 
@@ -77,7 +76,6 @@ namespace RaytracedMaterials
 		public TexturedFloat TransmissionRoughness = new TexturedFloat(Pbr.OpacityRoughness, 0.0f, false, 0.0f);
 		public TexturedColor Emission = new TexturedColor(Pbr.Emission, Color4f.Black, false, 1.0f);
 		public TexturedFloat AmbientOcclusion = new TexturedFloat(Pbr.AmbientOcclusion, 0.0f, false, 1.0f);
-		public TexturedFloat Smudge = new TexturedFloat(Pbr.Smudge, 0.0f, false, 1.0f);
 		public TexturedColor Bump = new TexturedColor(Pbr.Bump, Color4f.Black, false, 1.0f);
 
 		protected override void OnAddUserInterfaceSections()
@@ -125,5 +123,20 @@ namespace RaytracedMaterials
 
 			}
 		}
+	}
+
+	[Guid("59F759C0-954E-4D5D-9F8B-DFD835F180DA")]
+	public class ExtendedPbrMaterial : PbrMaterial
+	{
+		public TexturedFloat Smudge = new TexturedFloat("smudge", 0.0f, false, 1.0f);
+		public TexturedFloat Scratch = new TexturedFloat("scratch", 0.0f, false, 1.0f);
+		public ExtendedPbrMaterial() : base()
+		{
+			TexturedSlot(this, "smudge", 0.0f, "Smudge");
+			TexturedSlot(this, "scratch", 0.0f, "Scratch");
+		}
+		public override string TypeName => "Rhino PBR-style material (Extended)";
+
+		public override string TypeDescription => "Rhino PBR-style material, extended with smudge and scratch map support.";
 	}
 }
