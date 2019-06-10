@@ -62,7 +62,7 @@ namespace RaytracedMaterials
 		public TexturedFloat Metallic = new TexturedFloat(Pbr.Metallic, 0.0f, false, 0.0f);
 		public TexturedFloat Subsurface = new TexturedFloat(Pbr.Subsurface, 0.0f, false, 0.0f);
 		public TexturedColor SubsurfaceColor = new TexturedColor(Pbr.SubsurfaceScatteringColor, Color4f.White, false, 0.0f);
-		public TexturedColor SubsurfaceRadius = new TexturedColor(Pbr.SubsurfaceScatteringRadius, Color4f.White, false, 0.0f);
+		public TexturedFloat SubsurfaceRadius = new TexturedFloat(Pbr.SubsurfaceScatteringRadius, 0.0f, false, 0.0f);
 		public TexturedFloat Specular = new TexturedFloat(Pbr.Specular, 0.0f, false, 0.0f);
 		public TexturedFloat SpecularTint = new TexturedFloat(Pbr.SpecularTint, 0.0f, false, 0.0f);
 		public TexturedFloat Roughness = new TexturedFloat(Pbr.Roughness, 0.0f, false, 1.0f);
@@ -72,8 +72,8 @@ namespace RaytracedMaterials
 		public TexturedFloat SheenTint = new TexturedFloat(Pbr.SheenTint, 0.0f, false, 0.0f);
 		public TexturedFloat Clearcoat = new TexturedFloat(Pbr.Clearcoat, 0.0f, false, 0.0f);
 		public TexturedFloat ClearcoatRoughness = new TexturedFloat(Pbr.ClearcoatRoughness, 0.0f, false, 0.0f);
-		public TexturedFloat Ior = new TexturedFloat(Pbr.OpacityIor, 1.0f, false, 0.0f);
-		public TexturedFloat Transmission = new TexturedFloat(Pbr.Opacity, 0.0f, false, 0.0f);
+		public TexturedFloat Ior = new TexturedFloat(Pbr.OpacityIor, 1.45f, false, 0.0f);
+		public TexturedFloat Transmission = new TexturedFloat(Pbr.Opacity, 1.0f, false, 0.0f);
 		public TexturedFloat TransmissionRoughness = new TexturedFloat(Pbr.OpacityRoughness, 0.0f, false, 0.0f);
 		public TexturedColor Emission = new TexturedColor(Pbr.Emission, Color4f.Black, false, 1.0f);
 		public TexturedFloat AmbientOcclusion = new TexturedFloat(Pbr.AmbientOcclusion, 0.0f, false, 1.0f);
